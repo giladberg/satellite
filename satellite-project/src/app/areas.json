@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "type": "F12",
+    "description": "North Control Tower, Bargam...",
+    "shape" : "shape-picture1"
+  },
+  {
+    "id": 2,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "shape" : "shape-picture2"
+  },
+  {
+    "id": 3,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "shape" : "shape-picture3"
+  },
+  {
+    "id": 4,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "shape" : "shape-picture4"
+  },
+  {
+    "id": 5,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "shape" : "shape-picture5"
+  },
+  {
+    "id": 6,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "shape" : "null"
+  }
+
+
+]

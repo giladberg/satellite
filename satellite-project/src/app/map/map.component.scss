@@ -1,0 +1,302 @@
+
+.main-map{
+  width: 100vw;
+  height: 100vh;
+  background: #2a2e43 url("../../assets/images/backgrounds/geoeye-dc.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-blend-mode:exclusion;
+  position:relative;
+
+}
+
+
+.navbar-map-view{
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  top:3%;
+  left:2%;
+  //width:28.5rem;
+   min-width: 285px;
+  height: 7%;
+}
+
+
+.shape-wrapper{
+  position:relative;
+
+  &__Shape{
+    display: flex;
+    width: 41px;
+    height: 41px;
+    border-radius: 999px;
+    box-shadow: 0 12px 16px 0 rgba(26, 32, 58, 0.5);
+    background-color:#313954;
+    &:hover {
+      cursor: pointer;
+      background-color:#3499ff;
+      .Bars-Burger {
+        filter: brightness(9.1);
+      }
+      .devices {
+        filter: brightness(9.1);
+      }
+      .areas{
+        filter: brightness(9.1);
+      }
+      .places{
+        filter: brightness(9.1);
+      }
+    }
+
+  }
+
+}
+.Bars-Burger {
+  width: 16px;
+  height: 11px;
+  object-fit: contain;
+  margin:auto;
+
+}
+.devices {
+  width: 23px;
+  height: 13.2px;
+  object-fit: contain;
+  margin:auto;
+
+}
+.areas {
+  width: 20px;
+  height: 19.3px;
+  object-fit: contain;
+  margin:auto;
+
+
+}
+.places {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin:auto;
+
+}
+.clickNavBarButton{
+  background-color: #3499ff;
+
+}
+
+.clickNavBarButtonIcon{
+  filter: brightness(9.1);
+
+}
+
+
+.right-button{
+  position: absolute;
+  top:3%;
+  right: 0%;
+  display: flex;
+  width: 55px;
+  height: 35px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.16);
+  background-color:#2a2e43;
+  border-radius: 20px 0px 0px 20px;
+
+
+  &__pink-circule{
+    border-radius: 999px;
+    width: 12px;
+    height: 12px;
+    background-color: #f83a8a;
+    border:1px solid #ffffff;
+
+  }
+
+  &__target{
+    margin:auto;
+    width: 20px;
+    height: 12.9px;
+    object-fit: contain;
+
+
+
+  }
+  &:hover {
+    cursor: pointer;
+    background-color:#ffffff;
+    .right-button__pink-circule{
+      background-color: #ffffff;
+      border:1px solid #f83a8a;
+    }
+    .right-button__target{
+      filter: brightness(0.1);
+
+    }
+  }
+}
+
+.left-bottom-button{
+  position: absolute;
+  justify-content: center;
+  bottom: 4%;
+  left:3.2%;
+  display:flex;
+  width: 41px;
+  height: 41px;
+  box-shadow: 0 0 16px 0 rgba(26, 32, 58, 0.5);
+  background-color: #ffffff;
+  border-radius: 999px;
+  cursor:pointer;
+
+  &__union-btn{
+    margin: auto;
+    width: 22.3px;
+    height: 22.3px;
+    object-fit: contain;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: black;
+    .left-bottom-button__union-btn {
+      filter: brightness(9.1);
+    }
+  }
+}
+
+.container-bottom-right{
+  position: absolute;
+  width:20%;
+  height: 24%;
+  min-width:200px;
+  min-height:160px;
+  bottom: 4%;
+  right: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+}
+
+
+.ruler-btn{
+  width: 40px;
+  height: 40px;
+  background-color:#ffffff;
+  border-radius: 999px;
+  display: flex;
+  box-shadow: 0 0 16px 0 rgba(26, 32, 58, 0.5);
+  margin-right: 7%;
+  &__ruler{
+    margin:auto;
+    width: 28.6px;
+    height: 28.6px;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color:black;
+    .ruler-btn__ruler {
+      filter: brightness(9.1);
+    }
+  }
+}
+
+.joystick-btn{
+  cursor :pointer;
+  margin-right: 7%;
+  width: 38px;
+  height: 104px;
+  box-shadow: 0 0 8px 0 rgba(44, 66, 106, 0.24);
+  background-color:#ffffff;
+  border-radius: 25px 25px 25px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  &__plus{
+    width: 12px;
+    height: 12px;
+    object-fit: contain
+  }
+
+  &__minus{
+    position: relative;
+    left:1px;
+    width: 13px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: black;
+    top:12px;
+    margin-right:2px;
+  }
+
+  &__up{
+    position: relative;
+    top:18%;
+    width: 17.1px;
+    height: 17.1px;
+    object-fit: contain;
+  }
+
+  &__down{
+    width: 17.1px;
+    height: 17.1px;
+    object-fit: contain;
+    opacity: 0.5;
+  }
+}
+
+.bottom-right-btn{
+  cursor :pointer;
+  width: 336px;
+  height: 30px;
+  opacity: 0.6;
+  background-color: #1a203a;
+  border-radius: 25px 25px 25px 25px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  &__metter{
+    margin-bottom: 2%;
+    align-self: center;
+    width: 29px;
+    height: 15px;
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  &__line{
+    width: 65px;
+    height: 0;
+    border: solid 1px #ffffff;
+  }
+
+  &__X-9033429-Y-8033290{
+    width: 109px;
+    height: 15px;
+    font-family: Poppins;
+    font-size: 10px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+  }
+
+}
+

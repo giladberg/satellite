@@ -1,0 +1,15 @@
+////////////////////////
+//MAP-VIEW-MODEL
+
+.main-map{
+   width: 100vw;
+  height: 100vh;
+    background: $color-dark url("./images/backgrounds/geoeye-dc.jpg") no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-blend-mode:exclusion;
+    position:relative;
+    
+}

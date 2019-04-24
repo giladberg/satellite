@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+    <defs>
+        <style>
+            .cls-1{fill:#313954}.cls-2{fill:#78849e;fill-rule:evenodd}.cls-3{fill:#51f69e}
+        </style>
+    </defs>
+    <g id="Radar_online" data-name="Radar online" transform="translate(-1012 -364)">
+        <path id="Subtraction_4" d="M318-943a21.855 21.855 0 0 1-15.556-6.444A21.856 21.856 0 0 1 296-965a21.857 21.857 0 0 1 6.444-15.557A21.855 21.855 0 0 1 318-987a21.857 21.857 0 0 1 15.557 6.444A21.857 21.857 0 0 1 340-965a21.935 21.935 0 0 1-1.316 7.513A7.94 7.94 0 0 0 334-959a8.009 8.009 0 0 0-8 8 7.967 7.967 0 0 0 2.192 5.5A22.055 22.055 0 0 1 318-943z" class="cls-1" data-name="Subtraction 4" transform="translate(716 1351)"/>
+        <g id="radar">
+            <path id="radar-2" d="M22.714 6.65a11.393 11.393 0 1 0 1.7 15.51.834.834 0 0 1 1.332 1A13.061 13.061 0 1 1 23.9 5.468l.806-.806a.889.889 0 0 1 1.254 1.257L17.381 14.5a2.221 2.221 0 1 1-1.258-1.258l2.638-2.642a5.836 5.836 0 1 0 2.386 4.708.834.834 0 1 1 1.667 0 7.5 7.5 0 1 1-2.864-5.9zm4.268 13.107a1.667 1.667 0 1 1 1.668-1.667 1.667 1.667 0 0 1-1.667 1.667z" class="cls-2" data-name="radar" transform="translate(1018.55 370.55)"/>
+        </g>
+        <path id="Path_648" d="M6 0a6 6 0 1 1-6 6 6 6 0 0 1 6-6z" class="cls-3" data-name="Path 648" transform="translate(1044 394)"/>
+    </g>
+</svg>

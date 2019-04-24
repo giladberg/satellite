@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "type": "radar",
+    "name": "Abiron C669",
+    "description": "North Control Tower, Bargam Airefield",
+    "status": "connected"
+
+  },
+  {
+    "id": 2,
+    "type": "radar",
+    "name": "Abiron C669",
+    "description": "North Control Tower, Bargam...",
+    "status": "error"
+  },
+  {
+    "id": 3,
+    "type": "radar",
+    "name": "Abiron C669",
+    "description": "Main Ranway, Bargam Airefield",
+    "status": "disconnected"
+
+  },
+  {
+    "id": 4,
+    "type": "camera",
+    "name": "Smart Camera",
+    "description": "Apachi deck, Bargam Airfield",
+    "status": "connected"
+  },
+  {
+    "id": 5,
+    "type": "camera",
+    "name": "Delta Camera",
+    "description": "Delta Unit, Bargam Airfield",
+    "status": "connected"
+  },
+  {
+    "id": 6,
+    "type": "camera",
+    "name": "Arbirona",
+    "description": "North Control Tower, Bargam Airefield",
+    "status": "disconnected"
+  },
+  {
+    "id": 7,
+    "type": "radar",
+    "name": "Tower 360",
+    "description": "North Control Tower, Bargam Airefield",
+    "status": "connected"
+  },
+  {
+    "id": 8,
+    "type": "radar",
+    "name": "Tower 360",
+    "description": "North Control Tower, Bargam Airefield",
+    "status": "no-status"
+
+  }
+
+]

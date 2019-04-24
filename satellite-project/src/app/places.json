@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "favorite" : true
+  },
+  {
+    "id": 2,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "favorite" : false
+  },
+  {
+    "id": 3,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "favorite" : false
+  },
+  {
+    "id": 4,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "favorite" : false
+  },
+  {
+    "id": 5,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "favorite" : false
+  },
+  {
+    "id": 6,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "favorite" : false
+  },
+  {
+    "id": 7,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "favorite" : false
+  },
+  {
+    "id": 8,
+    "type": "Safe Zone",
+    "description": "North Control Tower, Bargam...",
+    "favorite" : false
+  }
+
+]

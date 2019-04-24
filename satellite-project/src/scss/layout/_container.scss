@@ -1,0 +1,66 @@
+/////////////////////////////////////////////
+//LOGIN-PAGE
+
+.container-login{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  min-height: 60rem;
+
+  &__part1{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex: 0 1 60%;
+    background-blend-mode: overlay;
+    background: $color-dark url("./images/backgrounds/2018-09-17-first-batch-of-high-res-satellite-imagery-in-maptiler-cloud-1.png") no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    
+    @include respond(phone) { 
+        display:none;
+    }
+  }
+
+  &__part2{
+       display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex: 0 0 40%;
+    background-color: $color-white;
+    min-width: 36rem;
+    @include respond(phone) { 
+      flex: 0 0 100%;
+}
+  }
+
+
+}
+
+
+//////////////////////////////////
+// MODEL-MAP-VIEW
+
+.container-bottom-right{
+   position: absolute;
+    width:20%;
+    height: 24%;
+    min-width:200px;
+    min-height:160px;
+    bottom: 4%;
+    right: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+}
