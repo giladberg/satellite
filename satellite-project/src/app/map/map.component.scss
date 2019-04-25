@@ -16,7 +16,6 @@
 .navbar-map-view{
   display: flex;
   position: absolute;
-  justify-content: space-around;
   top:3%;
   left:2%;
   //width:28.5rem;
@@ -27,7 +26,7 @@
 
 .shape-wrapper{
   position:relative;
-
+  margin-left:7%;
   &__Shape{
     display: flex;
     width: 41px;

@@ -10,18 +10,26 @@ import {EntityEnums} from "../../entities/enums/entity.enum";
   styleUrls: ['./popup.component.scss']
 })
 export class PopupComponent implements OnInit {
-  devicesFlag: boolean;
-  areasFlag: boolean;
-  placesFlag: boolean;
   noFound:boolean = false;
   menuType: EntityEnums;
   constructor(private deviceService: devicesService,private areaService: areasService,private placesService: placesService) { }
 
   ngOnInit() {
-    this.devicesFlag=this.deviceService.getStatus();
-    this.areasFlag=this.areaService.getStatus();
-    this.placesFlag=this.placesService.getStatus();
+    this.setMenuType(this.deviceService.getStatus(),this.areaService.getStatus(),this.placesService.getStatus());
+    console.log(this.menuType);
 
+  }
+
+  setMenuType(deviceStatus: boolean, areasStatus: boolean, placesStatus: boolean) {
+    if(deviceStatus){
+      this.menuType = EntityEnums.DEVICES;
+    }
+    else if(areasStatus) {
+      this.menuType = EntityEnums.AREAS
+    }
+    else{
+      this.menuType =EntityEnums.PLACES
+    }
   }
 
 }

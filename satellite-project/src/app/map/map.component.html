@@ -20,8 +20,8 @@
       <!--<div [ngClass]="{clickNavBarButton:  loadedFeature === 'places'}" class="shape-wrapper__Shape" ><img  [ngClass]="{clickNavBarButtonIcon:  loadedFeature === 'places'}" class="places" src="../../assets/images/icon/places.svg"> </div>-->
       <!--<app-purple-popup *ngIf="loadedFeature === 'places'" ></app-purple-popup>-->
       <!--&lt;!&ndash;<app-no-found-purple-popup></app-no-found-purple-popup>&ndash;&gt;-->
-    <!--</div>    -->
-    <div class="shape-wrapper" *ngFor="let button of buttons" tabindex="-1" (blur)="_toggleMenu($event)" (click)="_toggleMenu($event, button.type)">
+    <!--</div>  tabindex="-1" (blur)="_toggleMenu($event)" (click)="_toggleMenu($event, button.type)"  -->
+    <div class="shape-wrapper" *ngFor="let button of buttons" (click)="_toggleMenu($event, button.type)" (blur)="_toggleMenu($event)">
       <div class="shape-wrapper__Shape" [ngClass]="{clickNavBarButton:  loadedFeature === button.type}"><img [ngClass]="{clickNavBarButtonIcon:  loadedFeature === button.type}" [class]="button.type" [src]="button.img"></div>
     </div>
     <app-popup *ngIf="popupOpen === true"></app-popup>

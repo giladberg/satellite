@@ -49,6 +49,11 @@ export class MapComponent implements OnInit {
       this.areaService.changeStatus(false);
       this.placesService.changeStatus(false);
     }
+    else{
+      this.deviceService.changeStatus(false);
+      this.areaService.changeStatus(false);
+      this.placesService.changeStatus(false);
+    }
   }
 
 

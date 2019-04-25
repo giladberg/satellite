@@ -17,13 +17,11 @@ import {placesService} from "./services/places.service";
 import {ErrorDirective} from "./directives/error.directive";
 import {targetsService} from "./services/targets.service";
 import { PopupComponent } from './map/popup/popup.component';
-import { DevicesHeaderComponent } from './map/popup/headers/devices-header/devices-header.component';
-import { AreasHeaderComponent } from './map/popup/headers/areas-header/areas-header.component';
-import { PlacesHeaderComponent } from './map/popup/headers/places-header/places-header.component';
 import { DevicesListComponent } from './map/popup/body/devices-list/devices-list.component';
 import { AreasListComponent } from './map/popup/body/areas-list/areas-list.component';
 import { PlacesListComponent } from './map/popup/body/places-list/places-list.component';
 import { NoFoundComponent } from './map/popup/body/no-found/no-found.component';
+import { HeaderComponent } from './map/popup/headers/header/header.component';
 
 
 
@@ -41,13 +39,11 @@ import { NoFoundComponent } from './map/popup/body/no-found/no-found.component';
     NoFoundPurplePopupComponent,
     ErrorDirective,
     PopupComponent,
-    DevicesHeaderComponent,
-    AreasHeaderComponent,
-    PlacesHeaderComponent,
     DevicesListComponent,
     AreasListComponent,
     PlacesListComponent,
     NoFoundComponent,
+    HeaderComponent,
 
 
   ],
