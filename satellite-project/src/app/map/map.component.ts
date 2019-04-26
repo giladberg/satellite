@@ -20,13 +20,26 @@ export class MapComponent implements OnInit {
   }
 
   _toggleMenu(e , feature?: string) {
+     this.popupOpen=false;
+    this.loadedFeature='';
     // console.log(e);
     // if (!(e.relatedTarget.tagName  === 'INPUT')) {
-      
+      console.log("click")
       this.loadedFeature = feature ? feature : '';
-      this.popupOpen = !this.popupOpen;
       this.popupSelected(feature);
     // }
+  }
+  x(){
+    
+    setTimeout(()=>console.log("blur nav"),500)
+    // this.popupOpen=false;
+    // this.loadedFeature='';
+  }
+  y(){
+    console.log("click popup")
+  }
+  z(){
+    console.log("blur popup")
   }
 
   popupSelected(feature: string){
@@ -35,31 +48,35 @@ export class MapComponent implements OnInit {
       this.deviceService.changeStatus(true);
       this.areaService.changeStatus(false);
       this.placesService.changeStatus(false);
+      this.popupOpen=true;
+      
       
     }
    else if(feature === 'areas'){
       this.deviceService.changeStatus(false);
       this.areaService.changeStatus(true);
       this.placesService.changeStatus(false);
+      this.popupOpen=true;
       
     }
     else if(feature === 'places'){
       this.deviceService.changeStatus(false);
       this.areaService.changeStatus(false);
       this.placesService.changeStatus(true);
-      
+      this.popupOpen=true;
+     
     }
     else if (feature === 'aside'){
       this.deviceService.changeStatus(false);
       this.areaService.changeStatus(false);
       this.placesService.changeStatus(false);
-      this.popupOpen = false;
+      
     }
     else{
       this.deviceService.changeStatus(false);
       this.areaService.changeStatus(false);
       this.placesService.changeStatus(false);
-      this.popupOpen = false;
+      
      
     }
   }

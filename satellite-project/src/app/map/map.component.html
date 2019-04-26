@@ -2,16 +2,17 @@
 
   <nav class="navbar-map-view" >
     <!--</div>  tabindex="-1" (blur)="_toggleMenu($event)" (click)="_toggleMenu($event, button.type)"  -->
-    <div class="shape-wrapper" *ngFor="let button of buttons" (click)="_toggleMenu($event, button.type)" (blur)="_toggleMenu($event)" >
+    <div class="shape-wrapper" *ngFor="let button of buttons" (click)="_toggleMenu($event, button.type)"  tabindex="1" (blur)="x()">
       <div class="shape-wrapper__Shape" [ngClass]="{clickNavBarButton:  loadedFeature === button.type && popupOpen === true}"><img [ngClass]="{clickNavBarButtonIcon:  loadedFeature === button.type && popupOpen === true}" [class]="button.type" [src]="button.img"></div>
+      
     </div>
-    <app-popup *ngIf="popupOpen === true "></app-popup>
+    <app-popup *ngIf="popupOpen === true " tabindex="11" (click)="y()" (blur)="z()"></app-popup>
   </nav>
 
   <app-aside-popup *ngIf="loadedFeature === 'aside'" ></app-aside-popup>
 
 
-  <div class="right-button" tabindex="-1" (blur)="_toggleMenu($event)" (click)="_toggleMenu($event, 'aside')">
+  <div class="right-button" tabindex="-1" (blur)="x()" (click)="_toggleMenu($event, 'aside')">
     <div class="right-button__pink-circule"></div>
     <img class="right-button__target" src="../../assets/images/icon/target.svg">
   </div>

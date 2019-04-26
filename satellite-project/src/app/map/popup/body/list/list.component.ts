@@ -18,7 +18,7 @@ export class ListComponent implements OnInit {
   constructor(private resolver: ComponentFactoryResolver ) { }
 
   ngOnInit() {
-    this.setUp();
+    this.setUpList();
 
   }
 
@@ -26,7 +26,7 @@ export class ListComponent implements OnInit {
     const singlePostFactory = this.resolver.resolveComponentFactory(component)
     this.list.createComponent(singlePostFactory);
   }
-  setUp(){
+  setUpList(){
     if(this.menuType === EntityEnums.DEVICES){
       if(this.noFound){
         this.setComponent(NoFoundComponent);

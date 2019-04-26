@@ -1,9 +1,11 @@
 <div #header class="header-popup">
   <h4 class="header-popup__title">{{currentHeader.type | titlecase}}</h4>
-  <div class="header-popup__search-bar" (click)="onFocus($event)">
+  <div class="header-popup__search-bar" >
     <img class="header-popup__search-bar__wifi" src="../../assets/images/icon/noun_filter_787737_000000.svg">
     <div class="header-popup__search-bar__divider"></div>
-    <input (click)="onFocus($event)" type="text" class="header-popup__search-bar__filter" placeholder="Type or select filter">
+    <input  type="text" class="header-popup__search-bar__filter" placeholder="Type or select filter">
   </div>
   <div class="header-popup__small-title width-small-title">{{currentHeader.amount}} {{currentHeader.type | titlecase}}</div>
 </div>
+<!-- (click)="onFocus($event)" -->
+<!-- (click)="onFocus($event)" -->
