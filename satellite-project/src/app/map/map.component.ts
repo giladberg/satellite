@@ -22,37 +22,45 @@ export class MapComponent implements OnInit {
   _toggleMenu(e , feature?: string) {
     // console.log(e);
     // if (!(e.relatedTarget.tagName  === 'INPUT')) {
-      this.popupOpen = !this.popupOpen;
+      
       this.loadedFeature = feature ? feature : '';
+      this.popupOpen = !this.popupOpen;
       this.popupSelected(feature);
     // }
   }
 
   popupSelected(feature: string){
+    
     if(feature === 'devices'){
       this.deviceService.changeStatus(true);
       this.areaService.changeStatus(false);
       this.placesService.changeStatus(false);
+      
     }
    else if(feature === 'areas'){
       this.deviceService.changeStatus(false);
       this.areaService.changeStatus(true);
       this.placesService.changeStatus(false);
+      
     }
     else if(feature === 'places'){
       this.deviceService.changeStatus(false);
       this.areaService.changeStatus(false);
       this.placesService.changeStatus(true);
+      
     }
     else if (feature === 'aside'){
       this.deviceService.changeStatus(false);
       this.areaService.changeStatus(false);
       this.placesService.changeStatus(false);
+      this.popupOpen = false;
     }
     else{
       this.deviceService.changeStatus(false);
       this.areaService.changeStatus(false);
       this.placesService.changeStatus(false);
+      this.popupOpen = false;
+     
     }
   }
 

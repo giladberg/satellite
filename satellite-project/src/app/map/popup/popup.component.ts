@@ -16,7 +16,6 @@ export class PopupComponent implements OnInit {
 
   ngOnInit() {
     this.setMenuType(this.deviceService.getStatus(),this.areaService.getStatus(),this.placesService.getStatus());
-    console.log(this.menuType);
 
   }
 

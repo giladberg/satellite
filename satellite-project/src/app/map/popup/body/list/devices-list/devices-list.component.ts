@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {devicesService} from "../../../../services/devices.service";
-import {Device} from "../../../../entities/models/devices.model";
-import {ImagesDictionary} from "../../../../../assets/images/imagesDictionary";
+import {devicesService} from "../../../../../services/devices.service";
+import {Device} from "../../../../../entities/models/devices.model";
+
 
 @Component({
   selector: 'app-devices-list',
@@ -16,9 +16,5 @@ export class DevicesListComponent implements OnInit {
     this.devices = this.deviceService.getDevices();
   }
 
-  getImagByStatus() {
-    // switch case on the .status field
-    // case connected return item.type === Type.RADAR ? ImagesDictionary.RADAR_ONLINE : ImagesDictionary.CAMERA_ONLINE
-
-  }
+  
 }

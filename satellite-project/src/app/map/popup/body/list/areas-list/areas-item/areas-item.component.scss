@@ -1,0 +1,114 @@
+.frame-turquoise-content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 112px;
+    margin-bottom:-2%;
+    border-top: 0.016px solid #303346;
+    &__left-photo {
+      display: flex;
+      width: 41%;
+      height: 78%;
+      border-radius: 5px;
+      box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.16);
+      background: #2a2e43 url("../../../../../../../assets/images/backgrounds/geoeye-dc.jpg") no-repeat center center fixed;
+      margin: 3%;
+  
+    }
+    &__main{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 72%;
+      height: 100%;
+      &__t{
+        width: 11.6rem;
+        height: 23px;
+        opacity: 0.84;
+        font-family: Poppins;
+        font-size: 1.6rem;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: left;
+        color: #ffffff;
+      }
+  
+      &__p{
+        width: 18.2rem;
+        height: 1.7px;
+        font-family: Poppins;
+        font-size: 1.2rem;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: left;
+        color:#7d85a1;
+      }
+    }
+  
+  }
+  
+  .shadow-bottom2{
+    position: absolute;
+    left:2px;
+    bottom:2px;
+    width:100%;
+    height:4vh;
+    opacity:0.4;
+    z-index:1;
+    background-color:#2a2e43;
+  
+  }
+  
+  .shadow-bottom3{
+    position: absolute;
+    left:2px;
+    bottom:9px;
+    width:100%;
+    height:9vh;
+    opacity:0.4;
+    z-index:1;
+    background-color:#2a2e43;
+  
+  }
+  
+  @mixin shape-picture($width,$height,$border,$background-color,$clip-path) {
+    width:$width;
+    height:$height;
+    border:$border;
+    background-color:$background-color;
+    clip-path:$clip-path;
+  }
+  
+  
+  .shape-picture1{
+    margin: auto;
+    @include shape-picture(7.48rem,6.53rem,solid 1px rgba(248, 58, 138, 0.5),rgba(248, 58, 138, 0.34),polygon(20% 15%, 89% 64%, 62% 95%, 0 48%));
+  }
+  
+  .shape-picture2{
+    margin: auto;
+    @include shape-picture(7.5rem,6.16rem,solid 1px rgba(255, 214, 9, 0.5),rgba(255, 214, 9, 0.24),polygon(72% 29%, 100% 1%, 100% 99%, 0 100%, 0% 38%));
+  }
+  
+  .shape-picture3{
+    margin: auto;
+    @include shape-picture(5.89rem,6.16rem,solid 1px rgba(189, 40, 192, 0.5),rgba(189, 40, 192, 0.24),polygon(28% 3%, 41% 59%, 46% 62%, 94% 53%, 55% 100%, 39% 61%, 0 69%));
+  }
+  
+  .shape-picture4{
+    margin: auto;
+    @include shape-picture( 4.17rem,4.56rem,solid 1px rgba(81, 246, 158, 0.5),rgba(81, 246, 158, 0.24),polygon(56% 54%, 90% 31%, 87% 69%, 75% 100%, 25% 100%, 10% 74%, 22% 18%));
+  }
+  
+  .shape-picture5{
+    margin: auto;
+    @include shape-picture(5.89rem,5.18rem,solid 1px rgba(248, 58, 138, 0.5),rgba(248, 58, 138, 0.34),polygon(57% 13%, 89% 13%, 92% 59%, 69% 55%, 64% 80%, 27% 88%, 4% 63%, 19% 22%));
+  }
+  

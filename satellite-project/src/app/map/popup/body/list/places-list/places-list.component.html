@@ -1,0 +1,4 @@
+<div class="frame-purple-content" *ngFor="let place of places" [ngStyle]="{height:place.favorite === true ? '125px' : ''}">
+  <app-places-item-favorite class="item" *ngIf="place.favorite" [item]="place"></app-places-item-favorite>
+  <app-places-item class="item" *ngIf="!place.favorite" [item]="place"></app-places-item>
+</div>

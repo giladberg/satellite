@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {devicesService} from "../../../../services/devices.service";
-import {areasService} from "../../../../services/areas.service";
-import {placesService} from "../../../../services/places.service";
+import {devicesService} from "../../../../../services/devices.service";
+import {areasService} from "../../../../../services/areas.service";
+import {placesService} from "../../../../../services/places.service";
+import {ImagesDictionary} from "../../../../../../assets/images/imagesDictionary";
 
 
 @Component({
@@ -11,9 +12,9 @@ import {placesService} from "../../../../services/places.service";
 })
 export class NoFoundComponent implements OnInit {
   currnetPopup;
-  devices={title: "Devices not found", img:"../../assets/images/icon/noun_filter_787737_000000.svg"};
-  areas={title: "Areas not found", img:"../../assets/images/logo/Areas not found.svg"};
-  places={title: "places not found", img:"../../assets/images/logo/Places not foubd.svg"};
+  devices={title: "Devices not found", img:ImagesDictionary.DEVICE_NOT_FOUND};
+  areas={title: "Areas not found", img:ImagesDictionary.AREA_NOT_FOUND};
+  places={title: "places not found", img:ImagesDictionary.PLACES_NOT_FOUND};
   constructor(private deviceService: devicesService,private areaService: areasService,private placesService: placesService) { }
 
   ngOnInit() {
@@ -26,7 +27,7 @@ export class NoFoundComponent implements OnInit {
     }
 
     else{
-      this.currnetPopup = this.areas
+      this.currnetPopup = this.places;
     }
   }
 

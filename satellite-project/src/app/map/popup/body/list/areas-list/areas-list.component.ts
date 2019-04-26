@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Areas} from "../../../../entities/models/areas.model";
-import {areasService} from "../../../../services/areas.service";
+import {Areas} from "../../../../../entities/models/areas.model";
+import {areasService} from "../../../../../services/areas.service";
 
 @Component({
   selector: 'app-areas-list',

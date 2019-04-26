@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Places} from "../../../../entities/models/places.model";
-import {placesService} from "../../../../services/places.service";
+import {Places} from "../../../../../entities/models/places.model";
+import {placesService} from "../../../../../services/places.service";
 
 @Component({
   selector: 'app-places-list',

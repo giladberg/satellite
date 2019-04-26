@@ -2,14 +2,10 @@
 <div class="search-popup blue-popup" >
   <app-header [type]="this.menuType"></app-header> 
   <div class="body-popup" [ngStyle]="{height:noFound === true ? '630px' : ''}">
-    <!--<app-list [type]="this.menuType"></app-header>-->
-    <app-devices-list *ngIf="devicesFlag === true && noFound === false"></app-devices-list>
-    <app-areas-list *ngIf="areasFlag === true && noFound === false"></app-areas-list>
-    <app-places-list *ngIf="placesFlag === true && noFound === false"></app-places-list>
-    <app-no-found *ngIf="noFound === true"></app-no-found>
-    <div *ngIf="devicesFlag === true || placesFlag === true" class="shadow-bottom" ></div>
+    <app-list [type]="this.menuType" [noFound]="this.noFound"></app-list>
+    <!-- <div *ngIf="devicesFlag === true || placesFlag === true" class="shadow-bottom" ></div>
     <div *ngIf="areasFlag === true" class="shadow-bottom2"></div>
-    <div *ngIf="areasFlag === true" class="shadow-bottom3"></div>
+    <div *ngIf="areasFlag === true" class="shadow-bottom3"></div>  -->
   </div>
 </div>
 

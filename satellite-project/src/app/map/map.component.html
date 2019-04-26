@@ -1,31 +1,11 @@
 <main class="main-map">
 
   <nav class="navbar-map-view" >
-    <!--<div class="shape-wrapper">-->
-      <!--<div class="shape-wrapper__Shape"><img class="Bars-Burger" src="../../assets/images/icon/BarsBurger.svg"></div>-->
-
-    <!--</div>-->
-
-    <!--<div class="shape-wrapper__Shape"  tabindex="-1" (blur)="_toggleMenu($event)" (click)="_toggleMenu($event, 'devices')">-->
-      <!--<div [ngClass]="{clickNavBarButton:  loadedFeature === 'devices'}" class="shape-wrapper__Shape"><img [ngClass]="{clickNavBarButtonIcon:  loadedFeature === 'devices'}" class="sensors" src="../../assets/images/icon/sensors.svg"></div>-->
-        <!--<app-blue-popup *ngIf="loadedFeature === 'devices'" ></app-blue-popup>-->
-      <!--&lt;!&ndash;<app-no-found-blue-popup></app-no-found-blue-popup>&ndash;&gt;-->
-    <!--</div>-->
-    <!--<div class="shape-wrapper__Shape"  tabindex="-1" (blur)="_toggleMenu($event)" (click)="_toggleMenu($event, 'areas')">-->
-      <!--<div [ngClass]="{clickNavBarButton:  loadedFeature === 'areas'}" class="shape-wrapper__Shape" ><img [ngClass]="{clickNavBarButtonIcon:  loadedFeature === 'areas'}" class="noun_polygon_565307_000000" src="../../assets/images/icon/noun_polygon_565307_000000.svg"></div>-->
-          <!--<app-turquoise-popup *ngIf="loadedFeature === 'areas'" ></app-turquoise-popup>-->
-          <!--&lt;!&ndash;<app-no-found-turquoise-popup></app-no-found-turquoise-popup>&ndash;&gt;-->
-    <!--</div>-->
-    <!--<div class="shape-wrapper__Shape"  tabindex="-1" (blur)="_toggleMenu($event)" (click)="_toggleMenu($event, 'places')">-->
-      <!--<div [ngClass]="{clickNavBarButton:  loadedFeature === 'places'}" class="shape-wrapper__Shape" ><img  [ngClass]="{clickNavBarButtonIcon:  loadedFeature === 'places'}" class="places" src="../../assets/images/icon/places.svg"> </div>-->
-      <!--<app-purple-popup *ngIf="loadedFeature === 'places'" ></app-purple-popup>-->
-      <!--&lt;!&ndash;<app-no-found-purple-popup></app-no-found-purple-popup>&ndash;&gt;-->
     <!--</div>  tabindex="-1" (blur)="_toggleMenu($event)" (click)="_toggleMenu($event, button.type)"  -->
-    <div class="shape-wrapper" *ngFor="let button of buttons" (click)="_toggleMenu($event, button.type)" (blur)="_toggleMenu($event)">
-      <div class="shape-wrapper__Shape" [ngClass]="{clickNavBarButton:  loadedFeature === button.type}"><img [ngClass]="{clickNavBarButtonIcon:  loadedFeature === button.type}" [class]="button.type" [src]="button.img"></div>
+    <div class="shape-wrapper" *ngFor="let button of buttons" (click)="_toggleMenu($event, button.type)" (blur)="_toggleMenu($event)" >
+      <div class="shape-wrapper__Shape" [ngClass]="{clickNavBarButton:  loadedFeature === button.type && popupOpen === true}"><img [ngClass]="{clickNavBarButtonIcon:  loadedFeature === button.type && popupOpen === true}" [class]="button.type" [src]="button.img"></div>
     </div>
-    <app-popup *ngIf="popupOpen === true"></app-popup>
-
+    <app-popup *ngIf="popupOpen === true "></app-popup>
   </nav>
 
   <app-aside-popup *ngIf="loadedFeature === 'aside'" ></app-aside-popup>
