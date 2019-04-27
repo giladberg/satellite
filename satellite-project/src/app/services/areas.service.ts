@@ -1,7 +1,9 @@
 import {Areas} from "../entities/models/areas.model";
+import { EventEmitter } from '@angular/core';
 
 
 export class areasService {
+  someOneCallMeChanged = new EventEmitter<boolean>();
   private someOneCallMe : boolean = false;
   private  areas: Areas[] = [];
 
@@ -13,6 +15,7 @@ export class areasService {
 
   changeStatus(boolean){
     this.someOneCallMe = boolean;
+    this.someOneCallMeChanged.emit(boolean);
   }
 
   setAreas(areas: Areas[]) {

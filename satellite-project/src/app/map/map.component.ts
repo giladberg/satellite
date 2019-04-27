@@ -11,7 +11,6 @@ import {placesService} from "../services/places.service";
 })
 export class MapComponent implements OnInit {
   loadedFeature: string = '';
-  popupOpen: boolean = false;
   buttons = [{type:'Bars-Burger',img:'../../assets/images/icon/BarsBurger.svg'},{type:'devices', img:'../../assets/images/icon/sensors.svg'},{type:'areas',img:'../../assets/images/icon/noun_polygon_565307_000000.svg'},{type:'places',img:'../../assets/images/icon/places.svg'}];
   constructor(private deviceService: devicesService,private areaService: areasService,private placesService: placesService) { }
 
@@ -19,36 +18,31 @@ export class MapComponent implements OnInit {
 
   }
 
-  _toggleMenu(e , feature?: string) {
-     this.popupOpen=false;
+  _toggleMenu  (e , feature?: string) {
     this.loadedFeature='';
-    // console.log(e);
-    // if (!(e.relatedTarget.tagName  === 'INPUT')) {
-      console.log("click")
       this.loadedFeature = feature ? feature : '';
       this.popupSelected(feature);
-    // }
-  }
-  x(){
-    
-    setTimeout(()=>console.log("blur nav"),500)
-    // this.popupOpen=false;
-    // this.loadedFeature='';
-  }
-  y(){
-    console.log("click popup")
-  }
-  z(){
-    console.log("blur popup")
+  
+      
   }
 
+  
+
+
+  closePopup(e){
+    if(e.relatedTarget === null ){
+      this.loadedFeature='';
+    }
+  }
+  
+
   popupSelected(feature: string){
-    
+  
     if(feature === 'devices'){
       this.deviceService.changeStatus(true);
       this.areaService.changeStatus(false);
       this.placesService.changeStatus(false);
-      this.popupOpen=true;
+
       
       
     }
@@ -56,14 +50,14 @@ export class MapComponent implements OnInit {
       this.deviceService.changeStatus(false);
       this.areaService.changeStatus(true);
       this.placesService.changeStatus(false);
-      this.popupOpen=true;
+  
       
     }
     else if(feature === 'places'){
       this.deviceService.changeStatus(false);
       this.areaService.changeStatus(false);
       this.placesService.changeStatus(true);
-      this.popupOpen=true;
+
      
     }
     else if (feature === 'aside'){

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, Renderer2 } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Renderer2, AfterContentChecked } from '@angular/core';
 import { EntityEnums } from 'src/app/entities/enums/entity.enum';
 
 
@@ -7,7 +7,7 @@ import { EntityEnums } from 'src/app/entities/enums/entity.enum';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterContentChecked {
   devicesHeader  = {type:"devices",amount:"22",clipPath:"polygon(0 100%, 100% 100%, 100% 7%, 20% 7%, 16% 1%, 13% 7%, 0 7%)",backgroundImage:"linear-gradient(to right, #098bff, #00b2ff, #00cfee)"};
   areasHeader  = {type:"areas",amount:"22",clipPath:"polygon(0 100%, 100% 100%, 100% 7%, 38% 7%, 34% 0, 31% 7%, 0 7%)",backgroundImage:"linear-gradient(to right, #0097a7, #ccff90)"};
   placesHeader  = {type:"places",amount:"22",clipPath:"polygon(0 100%, 100% 100%, 100% 8%, 53% 8%, 50% 0, 47% 8%, 0 8%)",backgroundImage:"linear-gradient(to right, #7b1fa2, #7c4dff)"};
@@ -18,6 +18,9 @@ export class HeaderComponent implements OnInit {
   constructor(private renderer: Renderer2) { }
 
   ngOnInit() {
+    this.setHeader();
+  }
+  ngAfterContentChecked() {
     this.setHeader();
   }
 

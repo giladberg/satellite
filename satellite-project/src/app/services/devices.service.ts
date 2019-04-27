@@ -1,8 +1,10 @@
 import {Device} from "../entities/models/devices.model";
+import { EventEmitter } from '@angular/core';
 
 
 
 export class devicesService {
+  someOneCallMeChanged = new EventEmitter<boolean>();
   private someOneCallMe : boolean = false;
   private devices: Device[] = [];
 
@@ -10,11 +12,14 @@ export class devicesService {
   }
 
   getStatus(){
+    
     return this.someOneCallMe;
   }
 
   changeStatus(boolean){
     this.someOneCallMe = boolean;
+    this.someOneCallMeChanged.emit(boolean);
+
   }
 
 

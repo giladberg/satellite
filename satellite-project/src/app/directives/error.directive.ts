@@ -10,15 +10,18 @@ export class ErrorDirective implements OnInit {
   }
 
   ngOnInit() {
-
+    
   }
 
   @HostListener('mouseenter') mouseover(){
-    this.elRef.nativeElement.style.visibility='visible';
+    console.log("dd")
+    //this.elRef.nativeElement.style.visibility='visible';
+    this.renderer.setStyle(this.elRef.nativeElement,'visibility','visible');
   }
 
   @HostListener('mouseleave') mouseleave(){
-    this.elRef.nativeElement.style.visibility='hidden';
+    //this.elRef.nativeElement.style.visibility='hidden';
+   this.renderer.setStyle(this.elRef.nativeElement,'visibility','hidden');
   }
 
 }

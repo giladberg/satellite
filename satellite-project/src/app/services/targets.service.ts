@@ -14,7 +14,7 @@ export class targetsService {
       this.target.push(targetInstance);
 
     }
-    console.log(this.target);
+    
 
   }
 

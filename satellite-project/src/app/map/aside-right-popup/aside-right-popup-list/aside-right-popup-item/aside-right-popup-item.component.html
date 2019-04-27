@@ -1,0 +1,15 @@
+<div class="aside-content" >
+    <div class="aside-content__left">
+     <div class="aside-content__left__light {{target.color}}" ></div>
+    </div>
+ <div class="aside-content__main">
+     <div class="aside-content__main__top">
+       <div class="aside-content__main__top__light" [ngStyle]="{backgroundColor:target.status === 'inactive' ? '#78849e' : ''}"></div>
+       <div class="aside-content__main__top__active" [ngStyle]="{color:target.status === 'inactive' ? '#78849e' : ''}">{{target.status}}</div>
+       <div class="aside-content__main__top__serial">{{target.serial}}</div>
+     </div>
+     <div class="aside-content__main__t justify-hide">{{target.type}}
+       <img *ngIf="target.hidden === true" class="hide"  src="../../assets/images/icon/hide (1).svg">
+     </div>
+     <div class="aside-content__main__p">{{target.description}}</div>
+ </div>

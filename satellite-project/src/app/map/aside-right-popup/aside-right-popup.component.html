@@ -1,0 +1,20 @@
+<aside class="aside-map-right">
+    <div class="header-aside-map">
+      <img class="header-aside-map__glasses" src="../../assets/images/icon/noun_Binoculars_1236068_000000.svg">
+      <div class="header-aside-map__targets">Targets</div>
+      <div class="header-aside-map__green"></div>
+      <div class="header-aside-map__active">ACTIVE</div>
+      <div class="header-aside-map__sign">˘</div>
+    </div>
+  
+    <div class="search-bar justify-search-bar" >
+      <img class="search-bar__wifi" src="../../assets/images/icon/noun_filter_787737_000000.svg">
+      <div class="search-bar__divider"></div>
+      <input type="text" class="search-bar__filter" placeholder="Type or select filter">
+      <p class="search-bar__x">x</p>
+    </div>
+    <app-aside-right-popup-list [data]="this.targets"></app-aside-right-popup-list>
+    <div class="shadow-bottom4" ></div>
+  
+  </aside>
+  

@@ -3,9 +3,9 @@
   <app-header [type]="this.menuType"></app-header> 
   <div class="body-popup" [ngStyle]="{height:noFound === true ? '630px' : ''}">
     <app-list [type]="this.menuType" [noFound]="this.noFound"></app-list>
-    <!-- <div *ngIf="devicesFlag === true || placesFlag === true" class="shadow-bottom" ></div>
-    <div *ngIf="areasFlag === true" class="shadow-bottom2"></div>
-    <div *ngIf="areasFlag === true" class="shadow-bottom3"></div>  -->
+    <div *ngIf="this.menuType === 'DEVICES' || this.menuType === 'PLACES'" class="shadow-bottom" ></div>
+    <div *ngIf="this.menuType === 'AREAS'" class="shadow-bottom2"></div>
+    <div *ngIf="this.menuType === 'AREAS'" class="shadow-bottom3"></div> 
   </div>
 </div>
 

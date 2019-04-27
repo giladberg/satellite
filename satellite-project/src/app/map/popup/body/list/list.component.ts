@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ViewContainerRef, ComponentFactoryResolver, AfterContentChecked, Type } from '@angular/core';
 import { EntityEnums } from 'src/app/entities/enums/entity.enum';
 import { AreasListComponent } from './areas-list/areas-list.component';
 import { DevicesListComponent } from './devices-list/devices-list.component';
@@ -11,7 +11,7 @@ import { NoFoundComponent } from './no-found/no-found.component';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit, AfterContentChecked {
   @Input('type') menuType: EntityEnums;
   @Input('noFound') noFound: boolean;
   @ViewChild('list',{read: ViewContainerRef}) list;
@@ -20,6 +20,10 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.setUpList();
 
+  }
+  ngAfterContentChecked() {
+   this.list.remove(0);
+    this.setUpList();
   }
 
   setComponent(component: any) {
@@ -53,5 +57,7 @@ export class ListComponent implements OnInit {
       
     }
   }
+
+  
 
 }

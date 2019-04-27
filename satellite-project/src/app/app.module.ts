@@ -26,6 +26,9 @@ import { DevicesItemComponent } from './map/popup/body/list/devices-list/devices
 import { AreasItemComponent } from './map/popup/body/list/areas-list/areas-item/areas-item.component';
 import { PlacesItemComponent } from './map/popup/body/list/places-list/places-item/places-item.component';
 import { PlacesItemFavoriteComponent } from './map/popup/body/list/places-list/places-item-favorite/places-item-favorite.component';
+import { AsideRightPopupComponent } from './map/aside-right-popup/aside-right-popup.component';
+import { AsideRightPopupListComponent } from './map/aside-right-popup/aside-right-popup-list/aside-right-popup-list.component';
+import { AsideRightPopupItemComponent } from './map/aside-right-popup/aside-right-popup-list/aside-right-popup-item/aside-right-popup-item.component';
 
 
 
@@ -54,6 +57,9 @@ import { PlacesItemFavoriteComponent } from './map/popup/body/list/places-list/p
     AreasItemComponent,
     PlacesItemComponent,
     PlacesItemFavoriteComponent,
+    AsideRightPopupComponent,
+    AsideRightPopupListComponent,
+    AsideRightPopupItemComponent,
    
   ],
   entryComponents: [
