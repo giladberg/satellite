@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Places} from "../../../../../entities/models/places.model";
-import {placesService} from "../../../../../services/places.service";
+
 
 @Component({
   selector: 'app-places-list',
@@ -9,10 +9,12 @@ import {placesService} from "../../../../../services/places.service";
 })
 export class PlacesListComponent implements OnInit {
   places: Places[];
-  constructor(private placesService: placesService) { }
+  @Input() data:any;
+  
+  constructor() { }
 
   ngOnInit() {
-    this.places = this.placesService.getPlaces();
+    this.places = this.data;
   }
 
 }

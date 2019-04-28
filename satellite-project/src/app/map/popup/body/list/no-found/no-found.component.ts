@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {devicesService} from "../../../../../services/devices.service";
-import {areasService} from "../../../../../services/areas.service";
-import {placesService} from "../../../../../services/places.service";
+import {Component, Input, OnInit} from '@angular/core';
 import {ImagesDictionary} from "../../../../../../assets/images/imagesDictionary";
+import { EntityEnums } from 'src/app/entities/enums/entity.enum';
 
 
 @Component({
@@ -11,18 +9,20 @@ import {ImagesDictionary} from "../../../../../../assets/images/imagesDictionary
   styleUrls: ['./no-found.component.scss']
 })
 export class NoFoundComponent implements OnInit {
+  @Input() typeOfNotFound:any;
   currnetPopup;
   devices={title: "Devices not found", img:ImagesDictionary.DEVICE_NOT_FOUND};
   areas={title: "Areas not found", img:ImagesDictionary.AREA_NOT_FOUND};
   places={title: "places not found", img:ImagesDictionary.PLACES_NOT_FOUND};
-  constructor(private deviceService: devicesService,private areaService: areasService,private placesService: placesService) { }
+  constructor() { }
 
   ngOnInit() {
-    if(this.deviceService.getStatus() === true) {
+    console.log(this.typeOfNotFound)
+    if(this.typeOfNotFound === EntityEnums.DEVICES) {
       this.currnetPopup = this.devices;
     }
 
-    else if(this.areaService.getStatus() === true) {
+    else if(this.typeOfNotFound === EntityEnums.AREAS) {
       this.currnetPopup = this.areas;
     }
 

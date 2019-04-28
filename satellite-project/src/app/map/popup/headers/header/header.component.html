@@ -3,7 +3,7 @@
   <div class="header-popup__search-bar" >
     <img class="header-popup__search-bar__wifi" src="../../assets/images/icon/noun_filter_787737_000000.svg">
     <div class="header-popup__search-bar__divider"></div>
-    <input  type="text" class="header-popup__search-bar__filter" placeholder="Type or select filter">
+    <input  type="text" class="header-popup__search-bar__filter" placeholder="Type or select filter" [(ngModel)]="filteredName" >
   </div>
   <div class="header-popup__small-title width-small-title">{{currentHeader.amount}} {{currentHeader.type | titlecase}}</div>
 </div>

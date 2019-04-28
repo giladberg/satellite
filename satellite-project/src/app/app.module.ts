@@ -1,15 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
-import { BluePopupComponent } from './map/popups/blue-popup/blue-popup.component';
-import { TurquoisePopupComponent } from './map/popups/turquoise-popup/turquoise-popup.component';
-import { PurplePopupComponent } from './map/popups/purple-popup/purple-popup.component';
-import { AsidePopupComponent } from './map/popups/aside-popup/aside-popup.component';
-import { NoFoundBluePopupComponent } from './map/popups/no-found-blue-popup/no-found-blue-popup.component';
-import { NoFoundTurquoisePopupComponent } from './map/popups/no-found-turquoise-popup/no-found-turquoise-popup.component';
-import { NoFoundPurplePopupComponent } from './map/popups/no-found-purple-popup/no-found-purple-popup.component';
 import {devicesService} from "./services/devices.service";
 import {areasService} from "./services/areas.service";
 import {placesService} from "./services/places.service";
@@ -29,6 +23,7 @@ import { PlacesItemFavoriteComponent } from './map/popup/body/list/places-list/p
 import { AsideRightPopupComponent } from './map/aside-right-popup/aside-right-popup.component';
 import { AsideRightPopupListComponent } from './map/aside-right-popup/aside-right-popup-list/aside-right-popup-list.component';
 import { AsideRightPopupItemComponent } from './map/aside-right-popup/aside-right-popup-list/aside-right-popup-item/aside-right-popup-item.component';
+import {FilterDevicesPipe} from "./pipes/devicesFilter.pipe";
 
 
 
@@ -38,13 +33,6 @@ import { AsideRightPopupItemComponent } from './map/aside-right-popup/aside-righ
     AppComponent,
     LoginComponent,
     MapComponent,
-    BluePopupComponent,
-    TurquoisePopupComponent,
-    PurplePopupComponent,
-    AsidePopupComponent,
-    NoFoundBluePopupComponent,
-    NoFoundTurquoisePopupComponent,
-    NoFoundPurplePopupComponent,
     ErrorDirective,
     PopupComponent,
     HeaderComponent,
@@ -60,6 +48,7 @@ import { AsideRightPopupItemComponent } from './map/aside-right-popup/aside-righ
     AsideRightPopupComponent,
     AsideRightPopupListComponent,
     AsideRightPopupItemComponent,
+    FilterDevicesPipe
    
   ],
   entryComponents: [
@@ -71,6 +60,7 @@ import { AsideRightPopupItemComponent } from './map/aside-right-popup/aside-righ
   ],
   imports: [
     BrowserModule,
+    FormsModule
     
   ],
   providers: [devicesService, areasService, placesService, targetsService],

@@ -1,57 +1,77 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {AfterContentChecked, Component, Input, OnInit, ViewChild} from '@angular/core';
 import {devicesService} from "../../services/devices.service";
 import {areasService} from "../../services/areas.service";
 import {placesService} from "../../services/places.service";
 import {EntityEnums} from "../../entities/enums/entity.enum";
+import {ImagesDictionary} from "../../../assets/images/imagesDictionary";
 
 @Component({
   selector: 'app-popup',
   templateUrl: './popup.component.html',
   styleUrls: ['./popup.component.scss']
 })
-export class PopupComponent implements OnInit {
-  noFound:boolean = false;
-  deviceFlag: boolean;
-  menuType: EntityEnums;
+export class PopupComponent implements OnInit, AfterContentChecked {
+  EntityEnums = EntityEnums;
+  data: any;
+  nofound:boolean = false;
+  userInput:string = '';
+  @Input('menuType') menuType;
   @ViewChild('shadowBottom') shadowBottom;
-  constructor(private deviceService: devicesService,private areaService: areasService,private placesService: placesService) { }
+  constructor(private devicesService: devicesService, private areasService: areasService, private placesService: placesService) { }
 
   ngOnInit() {
-  
-    this.setMenuType(this.deviceService.getStatus(),this.areaService.getStatus(),this.placesService.getStatus());
-    this.deviceService.someOneCallMeChanged.subscribe((deviceFlag: boolean) => {
-     if(deviceFlag){
-      this.setMenuType(true,false,false);
-     }
-    })
-    this.areaService.someOneCallMeChanged.subscribe((areaFlag) => {
-      if(areaFlag){
-        this.setMenuType(false,true,false);
-       }
-    })
-    this.placesService.someOneCallMeChanged.subscribe((placeFlag) => {
-      if(placeFlag){
-        this.setMenuType(false,false,true);
-       }
-    })
-    
-     
+    this.getData();
+
+  }
+  ngAfterContentChecked() {
+    this.getData();
+    console.log("aa");
+    //console.log(this.devicesService.getNewData());
+   // console.log(this.devicesService.getNewData().length);
+    if(this.userInput !== ''){
+      this.getFillterdData();
+    }
   }
 
 
-  setMenuType(deviceStatus: boolean, areasStatus: boolean, placesStatus: boolean) {
-    if(deviceStatus){
-      this.menuType = EntityEnums.DEVICES;
+  getData(){
+    switch (this.menuType) {
+      case EntityEnums.DEVICES:
+        this.data = this.devicesService.getDevices();
+        break;
+      case EntityEnums.AREAS:
+        this.data = this.areasService.getAreas();
+        break;
+      case EntityEnums.PLACES:
+        this.data = this.placesService.getPlaces();
+        break;
+      default:
+        break;
     }
-    else if(areasStatus) {
-      this.menuType = EntityEnums.AREAS
-    }
-    else{
-      this.menuType =EntityEnums.PLACES
-    }
-    
   }
 
-  
+
+  fillterData(userInput:string){
+    this.userInput=userInput;
+    //console.log(userInput);
+   // console.log(this.data.length)
+    this.devicesService.fillterData(userInput);
+  }
+
+  getFillterdData(){
+    switch (this.menuType) {
+      case EntityEnums.DEVICES:
+        this.data = this.devicesService.getNewData();
+        break;
+      case EntityEnums.AREAS:
+        this.data = this.areasService.getAreas();
+        break;
+      case EntityEnums.PLACES:
+        this.data = this.placesService.getPlaces();
+        break;
+      default:
+        break;
+    }
+  }
 
 }

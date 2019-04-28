@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {devicesService} from "../services/devices.service";
-import {areasService} from "../services/areas.service";
-import {placesService} from "../services/places.service";
+import {EntityEnums} from "../entities/enums/entity.enum";
 
 
 @Component({
@@ -10,78 +8,52 @@ import {placesService} from "../services/places.service";
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
+  EntityEnums = EntityEnums;
+
   loadedFeature: string = '';
-  buttons = [{type:'Bars-Burger',img:'../../assets/images/icon/BarsBurger.svg'},{type:'devices', img:'../../assets/images/icon/sensors.svg'},{type:'areas',img:'../../assets/images/icon/noun_polygon_565307_000000.svg'},{type:'places',img:'../../assets/images/icon/places.svg'}];
-  constructor(private deviceService: devicesService,private areaService: areasService,private placesService: placesService) { }
+  buttons = [{type: 'Bars-Burger', img: '../../assets/images/icon/BarsBurger.svg'},
+    {type: this.EntityEnums.DEVICES, img: '../../assets/images/icon/sensors.svg'},
+    {type: this.EntityEnums.AREAS, img: '../../assets/images/icon/noun_polygon_565307_000000.svg'},
+    {type: this.EntityEnums.PLACES, img: '../../assets/images/icon/places.svg'}];
+
+  constructor() {
+  }
 
   ngOnInit() {
 
   }
 
-  _toggleMenu  (e , feature?: string) {
-    this.loadedFeature='';
-      this.loadedFeature = feature ? feature : '';
-      this.popupSelected(feature);
-  
-      
+  _toggleMenu(e, feature?: string) {
+
+    this.loadedFeature = '';
+    this.loadedFeature = feature ? feature : '';
+
   }
 
-  
 
-
-  closePopup(e){
-    if(e.relatedTarget === null ){
-      this.loadedFeature='';
-    }
-  }
-  
-
-  popupSelected(feature: string){
-  
-    if(feature === 'devices'){
-      this.deviceService.changeStatus(true);
-      this.areaService.changeStatus(false);
-      this.placesService.changeStatus(false);
-
-      
-      
-    }
-   else if(feature === 'areas'){
-      this.deviceService.changeStatus(false);
-      this.areaService.changeStatus(true);
-      this.placesService.changeStatus(false);
-  
-      
-    }
-    else if(feature === 'places'){
-      this.deviceService.changeStatus(false);
-      this.areaService.changeStatus(false);
-      this.placesService.changeStatus(true);
-
-     
-    }
-    else if (feature === 'aside'){
-      this.deviceService.changeStatus(false);
-      this.areaService.changeStatus(false);
-      this.placesService.changeStatus(false);
-      
-    }
-    else{
-      this.deviceService.changeStatus(false);
-      this.areaService.changeStatus(false);
-      this.placesService.changeStatus(false);
-      
-     
+  closePopup(e) {
+    if (e.relatedTarget === null) {
+      this.loadedFeature = '';
     }
   }
 
-
-
-
-
-
-
+  checkToOpenPopup(){
+    switch (this.loadedFeature) {
+      case EntityEnums.DEVICES:
+        return true;
+        break;
+      case EntityEnums.AREAS:
+        return true;
+        break;
+      case EntityEnums.PLACES:
+        return true;
+        break;
+      default:
+        return false;
+        break;
+    }
   }
+}
 
 
 

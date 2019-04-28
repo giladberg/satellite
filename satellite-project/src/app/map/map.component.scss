@@ -38,7 +38,7 @@
     &:hover {
       cursor: pointer;
       background-color:#3499ff;
-      .Bars-Burger {
+      .bars-burger {
         filter: brightness(9.1);
       }
       .devices {
@@ -55,7 +55,7 @@
   }
 
 }
-.Bars-Burger {
+.bars-burger {
   width: 16px;
   height: 11px;
   object-fit: contain;

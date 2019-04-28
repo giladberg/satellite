@@ -1,11 +1,11 @@
 
 <div class="search-popup blue-popup" >
-  <app-header [type]="this.menuType"></app-header> 
-  <div class="body-popup" [ngStyle]="{height:noFound === true ? '630px' : ''}">
-    <app-list [type]="this.menuType" [noFound]="this.noFound"></app-list>
-    <div *ngIf="this.menuType === 'DEVICES' || this.menuType === 'PLACES'" class="shadow-bottom" ></div>
-    <div *ngIf="this.menuType === 'AREAS'" class="shadow-bottom2"></div>
-    <div *ngIf="this.menuType === 'AREAS'" class="shadow-bottom3"></div> 
+  <app-header [type]="this.menuType" (userInput)="fillterData($event)"></app-header>
+  <div class="body-popup" [ngStyle]="{height:this.nofound === true ? '630px' : ''}">
+    <app-list [type]="this.menuType" [data]="this.data" [noFound]="this.nofound" ></app-list>
+    <div *ngIf="this.menuType === EntityEnums.DEVICES || this.menuType === EntityEnums.PLACES" class="shadow-bottom" ></div>
+    <div *ngIf="this.menuType === EntityEnums.AREAS" class="shadow-bottom2"></div>
+    <div *ngIf="this.menuType === EntityEnums.AREAS" class="shadow-bottom3"></div>
   </div>
 </div>
 

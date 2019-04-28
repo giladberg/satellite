@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Areas} from "../../../../../entities/models/areas.model";
-import {areasService} from "../../../../../services/areas.service";
+
 
 @Component({
   selector: 'app-areas-list',
@@ -8,11 +8,12 @@ import {areasService} from "../../../../../services/areas.service";
   styleUrls: ['./areas-list.component.scss']
 })
 export class AreasListComponent implements OnInit {
+  @Input() data:any;
   areas: Areas[];
 
-  constructor(private areaService: areasService) { }
+  constructor() { }
   ngOnInit() {
-    this.areas = this.areaService.getAreas();
+    this.areas = this.data;
   }
 
 }

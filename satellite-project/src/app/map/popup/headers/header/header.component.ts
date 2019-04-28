@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, ViewChild, Renderer2, AfterContentChecked } from '@angular/core';
+import {Component, OnInit, Input, ViewChild, Renderer2, AfterContentChecked, Output, EventEmitter} from '@angular/core';
 import { EntityEnums } from 'src/app/entities/enums/entity.enum';
+
 
 
 @Component({
@@ -14,6 +15,8 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
   currentHeader ;
   @Input('type') menuType: EntityEnums;
   @ViewChild('header') header;
+  filteredName = '';
+  @Output() userInput = new EventEmitter<string>();
   
   constructor(private renderer: Renderer2) { }
 
@@ -22,6 +25,10 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
   }
   ngAfterContentChecked() {
     this.setHeader();
+    this.onUserInput();
+  }
+  onUserInput(){
+    this.userInput.emit( this.filteredName);
   }
 
   setHeader() {

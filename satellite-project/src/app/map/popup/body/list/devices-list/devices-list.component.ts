@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {devicesService} from "../../../../../services/devices.service";
+import {Component, Input, OnInit} from '@angular/core';
+
 import {Device} from "../../../../../entities/models/devices.model";
+import {Subscription} from "rxjs";
 
 
 @Component({
@@ -9,11 +10,21 @@ import {Device} from "../../../../../entities/models/devices.model";
   styleUrls: ['./devices-list.component.scss']
 })
 export class DevicesListComponent implements OnInit {
+  @Input() data:any;
   devices: Device[];
-  constructor(private deviceService: devicesService) { }
+  stringToFillter: string = '';
+  subscription: Subscription;
+
+  constructor() { }
 
   ngOnInit() {
-    this.devices = this.deviceService.getDevices();
+    
+     this.devices = this.data;
+    // this.subscription = this.deviceService.deviceStringToFillter.subscribe((string: string) => {
+    //   this.stringToFillter = string;
+    //   console.log(this.stringToFillter);
+    // })
+
   }
 
   
